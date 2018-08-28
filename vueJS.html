@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>VueJS Marconi</title>
+</head>
+
+<body>
+	<h1>Viu.js - Primeiros Passos</h1>
+	<a href="https://br.vuejs.org/v2/guide/#Primeiros-Passos">br.vuejs.org/v2/guide/#Primeiros-Passos</a>
+	<br/>
+	<br/>
+	<hr>
+
+	<h2>Renderização Declarativa</h2>
+	<i>1. inserindo nas chaves "{{}}" um simples...</i>
+	<br/>
+	<br/>
+	<div id="app-1">
+		{{ message }}
+	</div>
+	<hr>
+
+	<div id="app-2" style="padding: 20px">
+		<i>2. interação com mouse hover mostrando a Data...</i>
+		<br/>
+		<br/>
+		<span v-bind:title="message">
+			Pare o mouse sobre mim e veja a dica interligada dinamicamente!
+		</span>
+	</div>
+	<hr>
+
+	<h2>Condicionais e Laços</h2>
+	<i>3. Trabalhando com "true" e "false", nesse caso tem um "true" para visualizar a palavra:</i>
+	<br/>
+	<div id="app-3">
+		<p v-if="seen">
+			<b>Agora você me viu</b>
+		</p>
+	</div>
+	<hr>
+
+	<i>4. Acrescentado itens dinamicamente à uma lista com uso do tipo loop</i>
+	<br/>
+	<div id="app-4">
+		<ol>
+			<li v-for="todo in todos">
+				{{ todo.text }}
+			</li>
+		</ol>
+	</div>
+	<hr>
+
+	<h2>Tratando Interação do Usuário</h2>
+	<i>5. Cria texto atraves do viu e faz uma interação com esse texto, usando "function"</i>
+	<br/>
+	<div id="app-5">
+		<p>{{ message }}</p>
+		<button v-on:click="reverseMessage">Inverter Mensagem</button>
+	</div>
+	<br/>
+	<hr>
+
+	<div id="app-6">
+		<i>6. Cria texto atraves do input, o texto pode ser criado pelo usuário ou já escreva pelo viu.js e deixa o usuário editar</i>
+		<br/>
+		<p>{{ message }}</p>
+		<input v-model="message">
+	</div>
+	<br/>
+	<hr>
+
+	<h2>Composição com Componentes</h2>
+	<i>7. Parecido com o item "4", porém esse é para larga escala agindo em elementos filhos e pai </i>
+	<br/>
+
+	<div id="app-7">
+		<ol>
+			<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+			</todo-item>
+		</ol>
+	</div>
+	<hr>
+
+	<h2>Validação de formulário</h2>
+	https://vuejs.org/v2/cookbook/form-validation.html
+	<br/>
+	<br/>
+	<form id="app-8" @submit="checkForm" action="https://vuejs.org/" method="post">
+
+		<p v-if="errors.length">
+			<b>Please correct the following error(s):</b>
+			<ul>
+				<li v-for="error in errors">{{ error }}</li>
+			</ul>
+		</p>
+		<p>
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" v-model="name">
+		</p>
+		<p>
+			<label for="age">Age</label>
+			<input type="number" name="age" id="age" v-model="age" min="0">
+		</p>
+		<p>
+			<label for="movie">Favorite Movie</label>
+			<select name="movie" id="movie" v-model="movie">
+				<option>Star Wars</option>
+				<option>Vanilla Sky</option>
+				<option>Atomic Blonde</option>
+			</select>
+		</p>
+		<p>
+			<input type="submit" value="Submit">
+		</p>
+	</form>
+	<hr>
+
+	<h2>Using Custom Validation (email address)</h2>
+	<form id="app-9" @submit="checkForm" action="https://vuejs.org/" method="post" novalidate="true">
+
+		<p v-if="errors.length">
+			<b>Please correct the following error(s):</b>
+			<ul>
+				<li v-for="error in errors">{{ error }}</li>
+			</ul>
+		</p>
+		<p>
+			<label for="name">Name</label>
+			<input id="name" v-model="name" type="text" name="name">
+		</p>
+		<p>
+			<label for="email">Email</label>
+			<input id="email" v-model="email" type="email" name="email">
+		</p>
+		<p>
+			<label for="movie">Favorite Movie</label>
+			<select id="movie" v-model="movie" name="movie">
+				<option>Star Wars</option>
+				<option>Vanilla Sky</option>
+				<option>Atomic Blonde</option>
+			</select>
+		</p>
+		<p>
+			<input type="submit" value="Submit">
+		</p>
+	</form>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="meuvue.js"></script>
+</body>
+
+</html>
