@@ -9,7 +9,7 @@
 
 <body>
 	<h1>Viu.js - Primeiros Passos</h1>
-	<a href="https://br.vuejs.org/v2/guide/#Primeiros-Passos">br.vuejs.org/v2/guide/#Primeiros-Passos</a>
+	<a href="https://br.vuejs.org/v2/guide/#Primeiros-Passos" target="_blank" rel="noopener">br.vuejs.org/v2/guide/#Primeiros-Passos</a>
 	<br/>
 	<br/>
 	<hr>
@@ -89,8 +89,9 @@
 	https://vuejs.org/v2/cookbook/form-validation.html
 	<br/>
 	<br/>
-	<form id="app-8" @submit="checkForm" action="https://vuejs.org/" method="post">
+	<form id="app-8" @submit="checkForm" action="https://vuejs.org/v2/cookbook/form-validation.html" method="post">
 
+		<p>8. Preencha os formulários abaixo:</p>
 		<p v-if="errors.length">
 			<b>Please correct the following error(s):</b>
 			<ul>
@@ -120,7 +121,9 @@
 	<hr>
 
 	<h2>Using Custom Validation (email address)</h2>
-	<form id="app-9" @submit="checkForm" action="https://vuejs.org/" method="post" novalidate="true">
+	<form id="app-9" @submit="checkForm" action="https://vuejs.org/v2/cookbook/form-validation.html" method="post" novalidate="true">
+		
+		<p>8. Preencha os formulários abaixo:</p>
 
 		<p v-if="errors.length">
 			<b>Please correct the following error(s):</b>

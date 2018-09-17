@@ -19,7 +19,7 @@ var app3 = new Vue({
   }
 });
 
-var app4 = new Vue ({
+var app4 = new Vue({
   el: '#app-4',
   data: {
     todos: [
@@ -30,13 +30,13 @@ var app4 = new Vue ({
   }
 });
 
-var app5 = new Vue ({
+var app5 = new Vue({
   el: '#app-5',
   data: {
     message: 'inocraM'
   },
   methods: {
-    reverseMessage: function() {
+    reverseMessage: function () {
       this.message = this.message.split('').reverse().join('')
     }
   }
@@ -53,13 +53,14 @@ Vue.component('todo-item', {
   props: ['todo'],
   template: '<li>{{ todo.text }}</li>'
 });
+
 var app7 = new Vue({
   el: '#app-7',
   data: {
     groceryList: [
-        {id: 0, text: 'Vegetais'},
-        {id: 1, text: 'Queijo'},
-        {id: 2, text: 'Qualquer outra coisa'},
+      { id: 0, text: 'Vegetais' },
+      { id: 1, text: 'Queijo' },
+      { id: 2, text: 'Qualquer outra coisa' },
     ]
   }
 });
@@ -72,7 +73,7 @@ const app8 = new Vue({
     age: null,
     movie: null
   },
-  methods:{
+  methods: {
     checkForm: function (e) {
       if (this.name && this.age) {
         return true;
